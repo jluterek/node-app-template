@@ -1,0 +1,40 @@
+{
+  "name": "node-app-template",
+  "version": "1.0.0",
+  "description": "A template to quickly start node console application projects.",
+  "main": "dist/index.js",
+  "watch": {
+    "dev": "src"
+  },
+  "scripts": {
+    "babel": "babel src -d dist",
+    "lint": "eslint src",
+    "copy_config": "cp -r src/.env dist/.env",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && npm run babel && npm run copy_config",
+    "start": "node dist/index.js",
+    "watch": "npm-watch",
+    "dev": "npm run lint && npm run build && npm run start",
+    "prod": "node dist/index.js",
+    "jest": "jest",
+    "test": "npm run build && npm run jest",
+    "precommit": "lint-staged"
+  },
+  "keywords": [
+    "Node",
+    "Template"
+  ],
+  "author": "James Luterek",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-node8": "^1.2.0",
+    "eslint": "^5.5.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "jest": "^23.6.0",
+    "npm-watch": "^0.3.0",
+    "prettier": "^1.14.2"
+  }
+}
